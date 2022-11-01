@@ -1,22 +1,26 @@
 function mostrarResultados(dato) {
-   const results  =document.querySelector(".result")
-   const template = document.querySelector("#result-template")
-   const resultCountSearch= document.querySelector(".cantidad-result")
+   const results = document.querySelector(".result");
+   const template = document.querySelector("#result-template");
+   const resultCountSearch = document.querySelector(".cantidad-result");
    resultCountSearch.textContent = dato.length;
-   for(let result of dato){
+   for (let result of dato) {
       const precio = template.content.querySelector(".result-item-price");
-      let title =template.content.querySelector(".result-item-title")
-      let condition = template.content.querySelector(".result-item-condition")
-      let cantidadVentas = template.content.querySelector(".result-item-ventas")
-      let clone = document.importNode(template.content,true)
-      console.log(results);
-      results.splice(1).appendChild(clone)
+      let title = template.content.querySelector(".result-item-title");
+      let condition = template.content.querySelector(".result-item-condition");
+      let cantidadVentas = template.content.querySelector(
+         ".result-item-ventas"
+      );
+      var resultImg = template.content.querySelector(".result-item-img");
+      let clone = document.importNode(template.content, true);
+      results.appendChild(clone);
+      results.removeChild(results.firstChild);
       condition.textContent = result.condition;
       title.textContent = result.title;
-      precio.textContent = "$"+result.price;
-      cantidadVentas.textContent = result["sold_quantity"]
+      precio.textContent = "$" + result.price;
+      cantidadVentas.textContent = result["sold_quantity"];
+      resultImg.src = result.thumbnail;
+      console.log(result);
    }
-   console.log(dato[0]);
 }
 
 function main() {
