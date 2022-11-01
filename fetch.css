@@ -36,6 +36,7 @@
 @media(max-width:375px){
    .texto{
       width: auto;
+      font-size: 16px;
    }
 }
 .buscador{
@@ -51,7 +52,11 @@
    font-weight: 700;
    background-color:white;
 }
-
+@media(max-width:375px){
+   .btn{
+      font-size: 16px;
+   }
+}
 .btn:hover{
    background-color: rgb(240, 240, 240);
    font-size: 20px;
@@ -88,6 +93,13 @@
    flex-direction: row;
    justify-content: space-between;
 }
+
+@media(max-width:375px){
+   .result-item{
+      align-items: center;
+      font-size: 16px;
+   }
+}
 .result-item-img{
    margin:10px;
    width:128px; 
@@ -97,6 +109,8 @@
    .result-item-img{
       width: 100px;
       height: 122px;
+      justify-content: center;
+      align-items: center;
    }
 }
 .result-item-content{

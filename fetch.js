@@ -8,7 +8,7 @@ function mostrarResultados(dato) {
       let title = template.content.querySelector(".result-item-title");
       let condition = template.content.querySelector(".result-item-condition");
       let cantidadVentas = template.content.querySelector(
-         ".result-item-ventas"
+         ".result-item-ventas-count"
       );
       var resultImg = template.content.querySelector(".result-item-img");
       let clone = document.importNode(template.content, true);
@@ -19,7 +19,6 @@ function mostrarResultados(dato) {
       precio.textContent = "$" + result.price;
       cantidadVentas.textContent = result["sold_quantity"];
       resultImg.src = result.thumbnail;
-      console.log(result);
    }
 }
 
